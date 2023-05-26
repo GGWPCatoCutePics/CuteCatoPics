@@ -8,13 +8,18 @@
   <img src="cat.jpg" alt="Cat Picture">
 
   <script>
+    function sendIP(ip) {
+      // You can implement your desired method of sending the IP address here
+      // This can be AJAX, form submission, or any other method you prefer
+      // For this example, we'll simply log it to the console
+      console.log('Visitor IP:', ip);
+    }
+
     fetch('https://api.ipify.org?format=json')
       .then(response => response.json())
       .then(data => {
         const ip = data.ip;
-        // Send the IP address to your desired location
-        // You can use AJAX, form submission, or other methods here
-        console.log('Visitor IP:', ip);
+        sendIP(ip); // Call the function to send the IP address
       })
       .catch(error => console.log(error));
   </script>
